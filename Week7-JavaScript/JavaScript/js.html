@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "js/paper-full.min.js">
+
+    </script>
+</head>
+<body>
+    <canvas id="mycanvas" style="border: solid 1px black; width: 800px; height: 600px;">
+
+
+
+    </canvas>
+
+
+    <script>
+        paper.install(window);
+        
+        window.onload = function()
+        {
+            paper.setup("mycanvas");
+
+            /*
+            var p = new Point(400, 300);
+            var s = new Size(300, 100);
+
+            var r = Shape.Rectangle(p, s);
+            r.strokeColor = "blue";
+
+            var p2 = new Point(200, 400);
+            var c = Shape.Circle(p2, 75);
+
+            c.strokeColor = "pink";
+
+            var rectangle = new Rectangle(new Point(20, 20), new Size(180, 60));
+            var shape = new Shape.Ellipse(rectangle);
+            shape.fillColor = 'green';
+            */
+
+            var t = new Tool();
+
+
+            t.onMouseDown = function(event)
+            {
+                // var c = Shape.Circle(event.point.x, event.point.y, 20);
+                // c.fillColor = "pink";
+                path = new Path();
+                path.strokeColor = "black";
+                path.strokeWidth = 10;
+                path.add(event.point);
+            }
+            t.onMouseDrag = function(event)
+            {
+                // var c = Shape.Circle(event.point.x, event.point.y, 20);
+                // c.fillColor = "pink";
+                path.add(event.point)
+
+            }
+
+
+
+
+        }
+        var t = new PointText(300, 200);
+        t.fontSize = 36;
+        t.justification = "center";
+        t.fillColor = "pink";
+        t.content = "Hello world";
+
+        var from = new Point(20, 20);
+        var to = new Point(780, 580);
+        var path = new Path.Line(from, to);
+        path.strokeWidth = 20;
+        path.strokeColor = "black";
+    </script>
+    
+</body>
+</html>

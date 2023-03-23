@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p
+        {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            background-color: chartreuse;
+        }
+        .clicked
+        {
+            background-color: rebeccapurple;
+
+        }
+        .doubleclicked
+        {
+            background-color: goldenrod;
+        }
+        .hovered
+        {
+            background-color: peachpuff;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Event Listener Examples
+    </h1>
+    <hr>
+    <p id="click_para">Click me once</p>
+    <p id="doubleclick_para">Click me twice</p>
+    <p id="hover_para">Hover on me</p>
+
+    <script>
+        function on_click()
+        {
+            console.log("Click");
+            document.getElementById("click_para").classList.toggle("clicked")
+        }
+        function on_doubleclick()
+        {
+            console.log("Double click");
+            document.getElementById("doubleclick_para").classList.toggle("doubleclicked")
+
+        }
+        function on_mouseevent()
+        {
+            console.log("Mouse event");
+            document.getElementById("hover_para").classList.toggle("hovered")
+        }
+        function on_mousemove()
+        {
+            console.log("Mouse move event")
+        }
+        async function on_click_hover_para(event)
+        {
+            console.log(`Click hover para: ${event.type} ... ${event.target} ... ${event.screenX}, ${event.screenY}, ${event.pageX}, ${event.pageY} ... ${event.offsetX}, ${event.offsetY}`);
+
+            var u = new URL("https://jsonplaceholder.typicode.com/users");
+
+            var x = Math.floor(event.offsetX / 20) + 1;
+
+
+            u.searchParams.append("id", x);
+            var res = await fetch(u);
+            console.log(res.status);
+
+            var j = await res.json();
+            var bs = j[0]["company"]["bs"];
+            console.log(bs);
+            // set the para text to be the extracted bs
+            document.getElementById("hover_para").innerHTML = bs;
+        }
+
+
+
+        document.getElementById("click_para").addEventListener("click", on_click);
+
+        document.getElementById("doubleclick_para").addEventListener("dblclick", on_doubleclick);
+
+        document.getElementById("hover_para").addEventListener("mouseover", on_mouseevent);
+        document.getElementById("hover_para").addEventListener("mouseout", on_mouseevent);
+        document.getElementById("hover_para").addEventListener("mousemove", on_mousemove);
+        document.getElementById("hover_para").addEventListener("click", on_click_hover_para);
+
+
+
+
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>

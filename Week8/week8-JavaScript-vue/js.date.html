@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Date examples
+    </h1>
+    <hr>
+
+    <form name="form1">
+        <input type="date" id="mydate">
+        <input type="button" value="click me" onclick="checkdate();">
+
+
+
+
+    </form>
+    <script>
+        function checkdate()
+        {
+           
+            days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+            var s = document.form1.dateinput.value;
+            console.log(s);
+            var d = new Date(s);
+            console.log(d);
+            n = d.getDay()
+
+            var t = new Date();
+
+            var c = ""
+            if (d < t)
+            {
+                c = "was a"
+            }
+            else if (d > t)
+            {
+                c = "will be a"
+            }
+            else
+            {
+                c = "is"
+            }
+            
+        }
+        var p1 = document.createElement("p")
+        var s = document.createTextNode(`${s} ${c} ${days[n]}`);
+        p1.appendChild(s);
+        document.getElementById("outputs").appendChild(p1);
+    </script>
+
+    <hr>
+    <div id="outputs"></div>
+    <hr>
+    
+
+
+</body>
+</html>

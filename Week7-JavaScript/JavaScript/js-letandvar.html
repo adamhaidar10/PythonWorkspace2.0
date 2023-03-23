@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Let and var
+    </h1>
+    <hr>
+
+    <script>
+        function add_two_numbers(x, y)
+        {
+            var z = x + y;
+            document.write(z);
+            document.write("<hr>");
+
+            for (var i=0; i<z; i++)
+            {
+                // scope of let is just this code block
+                // scope of var is the entire function
+                // let n = i + 5;
+                var n = i + 5;
+               
+                document.write(n);
+                document.write("<br>");
+            }
+
+            // if the variable is defined with let within the for loop this will show no output
+            // and will also show a reference exception on the console (ctrl-shift-i)
+            document.write("<hr>");
+            document.write(`The final value is ${n}`);
+        }
+    </script>
+
+    <input type="button" value="Click me" onclick="add_two_numbers(5, 7);">
+    <hr>
+</body>
+</html>

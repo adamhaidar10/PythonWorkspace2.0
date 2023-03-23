@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .on
+        {
+            background-color: pink;
+        }
+        .off
+        {
+            background-color: deeppink;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>
+        Interval example 1
+    </h1>
+    <hr>
+
+    <input type="button" id="stopinterval" value="Click me">
+    <img id="myimg">
+
+    <script>
+        var meerkats = ["m1.jpg", "m2.jpg", "m3.jpg", "m4.jpg", "m5.jpg", "m6.jpg"];
+        var i = 0;
+
+        document.getElementById("stopinterval").addEventListener("click", stopinterval);
+
+        function stopinterval()
+        {
+            console.log("click");
+            clearInterval(myInterval);
+        }
+
+        function on_interval()
+        {
+            console.log("interval event");
+            document.getElementById("myimg").src = meerkats[i];
+
+            i++;
+            if (i >= meerkats.length)
+            {
+                i = 0;
+            }
+        }
+
+        var myInterval = setInterval(on_interval, 5000);
+    </script>
+
+</body>
+</html>

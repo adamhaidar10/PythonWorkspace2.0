@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+</head>
+<body>
+    <h1>
+        Shopping List
+    </h1>
+    <hr>
+    <div id="item">
+
+    </div>
+    <script>
+        function addtolist()
+        {
+            var newitem = document.createElement("div");
+            newitem.innerHTML = document.shopping.newitemforlist.value;
+            document.getElementById("item").appendChild(newitem);
+            document.shopping.newitemforlist.value = "";
+
+        }
+        function clearInput()
+        {
+            while (document.getElementById("item").firstChild)
+            {
+                document.getElementById("item").removeChild(document.getElementById("item").firstChild);
+            
+            }
+        }
+       
+
+
+
+
+
+
+
+    </script>
+<form name="shopping">
+    <label for="newitemforlist" style="margin: 10px;">Type item to add to shopping list</label>
+    <input type="text" name="newitemforlist" style="margin: 10px;">
+
+
+    <input type="button" value="Add" onclick="addtolist();">
+    
+
+
+
+    <input type="button" value="Clear List" onclick="clearInput();">
+
+    <hr>
+
+
+    
+</form>
+</body>
+</html>

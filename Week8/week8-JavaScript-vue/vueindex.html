@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"> </script>
+    <link rel="stylesheet" href="vue-styles.css">
+
+</head>
+<body>
+    <h1>
+        This is my Vue page
+    </h1>
+    <p>But this is outside the Vue section</p>
+    <hr>
+
+    <div id="app">
+        <h1>
+            {{ pagename }}
+        </h1>
+        <p>{{ description }}</p>
+
+        <img v-bind:src="mainimage" style="height: 300px; width: 300px;">
+
+        <p>Here is a link to the wikipedia page about northern lights
+            <a v-bind:href="wikilink">This is the link</a>
+        </p>
+        <hr>
+        <h2>
+            Show something based on a condition
+        </h2>
+        <div v-if="stars">
+            <p>This is a view of stars</p>
+            <img src="stars.jpg" style="width: 300px; height: 300px;">
+        </div>
+        <div v-else>
+            <p>This is a sunset</p>
+            <img src="sunset.jpg" style="width: 300px; height: 300px;">
+        </div>
+        <hr>
+
+        <img v-if = "view == 'tree'" src="tree.jpg" style="width: 300px; height: 300px;">
+        <img v-else-if = "view == 'tree2'" src="tree2.jpg" style="width: 300px; height: 300px;">
+        <img v-else-if = "view == 'lake'" src="lake.jpg" style="width: 300px; height: 300px;">
+        <img v-else src = "city.jpg" style="width: 300px; height: 300px;">
+
+        <hr>
+        <p>
+            Here is a list of famous views
+        </p>
+        <ul>
+            <li v-for="famousview in famousviews">{{ famousview }}</li>
+        </ul>
+        <hr>
+        <div>
+            <div>
+                <p> Famous views</p>
+                <div v-for="view in famous">
+                    <p style="padding: 10px;">
+                    {{ view.country }} : {{ view.continent }} : {{ view.name }}
+                    </p>
+                </div>
+                    <table border>
+                        <tr v-for="view in famous">
+                            <td><img v-bind:src="view.image"></td>
+                        </tr>
+                    </table>
+
+
+
+            </div>
+            <hr>
+            <p>
+                Do you like views?
+            </p>
+            <button v-on:click="likesviews();">yes</button>
+            <button v-on:click="dislikesviews();">No</button>
+            <p>
+                {{ likes }} people like views
+            </p>
+            <img src="water.jpg" style="width: 300px; height: 300px;" v-show="happy">
+
+            <hr>
+            <div>
+                <!-- <div>
+                    <p> Famous views</p>
+                    <div v-for="view in famous" v-on:mouseover="viewhover(view.image);" style="margin: 20px;">
+                        <p class="boreded_para">
+                        {{ view.country }} : {{ view.continent }} : {{ view.name }}
+                        </p>
+                    </div>
+                       <img id="viewimg" src="" style="width: 300px; height: 300px; border: 1px solid; background-color: pink;">
+    
+    
+    
+                </div> -->
+        </div>
+
+
+
+    </div>
+
+    
+    
+
+    
+    <script src="vueMain.js"></script>
+
+    <script>
+        const mountedApp = app.mount("#app");
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area and Circumference of a Cicle</title>
+</head>
+<body>
+    <h1>
+        Calculate the Area and Circumference with ease
+    </h1>
+    <script>
+
+        function getarea()
+        {
+            var radius = document.form1.radius.value;
+            var area = Math.PI * Math.pow(radius,2);
+            document.form1.area.value = area.toFixed(2)
+        }
+        function getcircumference()
+        {
+            var radius = document.form1.radius.value;
+            var circumference = Math.PI * 2 * radius;
+            document.form1.Circumference.value = circumference.toFixed(2)
+        }
+        function clearInput()
+        {
+            document.form1.reset();
+        }
+
+
+
+    </script>
+    
+<form name="form1">
+    <label for="radius">Enter the radius of the Circle: </label>
+    <input type="text" name="radius" style="margin: 10px;">
+    <br>
+
+    <input type="button" value="Calculate Area" onclick="getarea();">
+    <br>
+    <br>
+    <input type="button" value="Calculate Circumference" onclick="getcircumference();">
+    <br>
+
+    <label for="area" style="margin: 10px;">The Area of the Circle is: </label>
+    <input type="text" name="area" style="margin: 10px;">
+    <br>
+
+    <label for="Circumference" style="margin: 10px;">The Circumference of the Circle is: </label>
+    <input type="text" name="Circumference" style="margin: 10px;">
+    <br>
+    <br>
+    <br>
+    
+    <input type="button" onclick="clearInput();" value="Clear output">
+    <br>
+</form>
+    
+</body>
+</html>

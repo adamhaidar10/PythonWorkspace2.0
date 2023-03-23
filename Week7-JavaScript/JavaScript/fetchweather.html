@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        <input type="button" value="Get weather" onclick="getweather();">
+    </form>
+
+    <script>
+        async function getweather()
+        {
+            var seattle = {"name": "Seattle", "lat": "47.6062", "lon": "-122.3321"};
+            var lisbon = {"name": "Lisbon", "lat": "38.7223", "lon": "-9.1393"};
+            var seoul = {"name": "Seoul", "lat": "37.5665", "lon": "126.9780"};
+            var auckland = {"name": "Auckland", "lat": "-36.8509", "lon": "174.7645"};
+
+            var cities = [seattle, lisbon, seoul, auckland];
+
+            document.write("<h1>World weather report</h1>");
+
+            document.write("<table border>");
+            document.write("<tr> <th>City</th> <th>Weather</th> <th>Temp C</th> </tr>");
+
+            for (var i = 0; i < cities.length; i++)
+            {
+                let u = new URL("https://api.openweathermap.org/data/2.5/weather");
+
+                u.searchParams.append("lat", cities[i]["lat"]);
+                u.searchParams.append("lon", cities[i]["lon"]);
+                u.searchParams.append("appid", "4ae259d943afdda4f1b4fe60fa63a676");
+                console.log(u);
+
+                let res = await fetch(u);
+                console.log(res);
+
+                let j = await res.json();
+
+                let weather = j["weather"][0]["main"];
+                let temp = Number(j["main"]["temp"]) - 273.15;
+
+                document.write(`<tr> <td> ${cities[i]["name"]} </td> <td> ${weather} </td> <td> ${temp.toFixed(2)} </td> </tr>`);
+            }
+            document.write("</table>");
+
+        }
+    </script>
+</body>
+</html>

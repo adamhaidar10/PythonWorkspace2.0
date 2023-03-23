@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p
+        {
+            width: 500px;
+            height: 400px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <img id="myimg">
+
+    <h1>
+        Get Kitten Pictures
+    </h1>
+    <p id="click_para"> 
+
+    </p>
+    <script>
+        async function on_click()
+        {
+            var x = event.offsetX
+            var y = event.offsetY
+        
+
+            var u = new URL(`http://placekitten.com/${x}/${y}`);
+            var res = await fetch(u);
+
+            var kblob = await res.blob();
+            var kimg = URL.createObjectURL(kblob);
+
+            document.getElementById("myimg").src = kimg;
+
+
+        }
+    
+    
+    
+    
+    document.getElementById("click_para").addEventListener("click", on_click);
+
+    </script>
+    
+</body>
+</html>

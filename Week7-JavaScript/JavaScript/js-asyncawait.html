@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Async await
+    </h1>
+
+    <script>
+        
+        async function do_fetch()
+        {
+            // get the value from the form
+            var n = document.form1.itemtoget.value;
+
+            if (n == "")
+            {
+                // if the value is blank, call the api to get all the todo list items
+                var res = await fetch(`https://jsonplaceholder.typicode.com/users`);
+                // get the json from the response
+                var j = await res.json();
+
+                // loop around the results until there are no more
+                var i = 0;
+                document.write("<table border");
+                while(j["id"] != "")
+                {
+                    // write the id and title to the screen
+                    var n = j[i]["name"];
+                    var e = j[i]["email"];
+                    var u = j[i]["username"];
+                    document.write("<tr>");
+                    document.write(`<td> ${n} </td> <td> ${e}</td> <td> ${u}</td>`);
+                    document.write("</tr>")
+                    i++;
+                    
+                }
+                document.write("</table>")
+            }
+            else
+            {
+                // if the value contains an item, append that value to the api call
+                var res = await fetch(`https://jsonplaceholder.typicode.com/users/${n}`);
+                // get the json from the response
+                var j = await res.json();
+                // this time we will have only one item - write the id and title to the screen
+                document.write(`${j["id"]} .... ${j["name"]}....${j[i]["username"]}....${j[i]["email"]}`);
+            }
+           
+        }
+    
+        
+    </script>
+    <form name="form1">
+        <label for="itemtoget">Enter item to get or leave blank for all items</label>
+        <input type="text" id="itemtoget">
+        <input type="button" value="Click me" onclick="do_fetch();">
+    </form>
+</body>
+</html>

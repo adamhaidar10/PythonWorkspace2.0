@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Arrow functions
+    </h1>
+
+    <script>
+        // old style function
+        function add_two_numbers(x, y)
+        {
+            /*
+            var z = x + y;
+            return z;
+            */
+
+            return x + y;
+        }
+
+        // new style ES6 function
+        let arrowised_add_two_numbers = (x, y) => x + y;
+
+        // old style function
+        function square(x)
+        {
+            return x * x;
+        }
+
+        // new style version
+        let arrowised_square = x => x * x;
+
+    </script>
+
+    <input type="button" value="Click me" onclick="add_two_numbers(5, 7);">
+    <input type="button" value="Click me" onclick="arrowised_add_two_numbers(5, 7);">
+
+</body>
+</html>

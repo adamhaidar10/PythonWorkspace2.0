@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Car Details</title>
+  <script src="js/paper-full.min.js"></script>
+
+<link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+  <h1 class="title">
+    Find Our Cars
+  </h1>
+  <form action="searchLicense.php" method="post">
+  <label for="license"> Search by License</label>
+  <input name="license" type="text">
+  <input type="submit" value="Submit">
+  </form>
+  <br>
+  <br>
+  <br>
+
+  <form method="post" action="searchMakeModel.php">
+    
+      <p>Search a list of Cars</p>
+      <label for="make">Type a Make</label>
+      <input name="make" type="text">
+      <br>
+      <label for="model">Type a Model</label>
+      <input name="model" type="text">
+      <br>
+      <input type="submit" value="Search">
+    
+  </form>
+
+</body>
+
+</html>

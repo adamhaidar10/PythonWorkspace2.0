@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Math libary
+    </h1>
+    <script>
+        var n = 15.735;
+        document.write(Math.floor(n)); // rounds down to the nearest integer
+        document.write("<br>");
+        document.write(Math.ceil(n)); // rounds up to the nearest interger
+        document.write("<br>");
+
+        n = 5;
+        document.write(Math.pow(n, 3)); // raise number to a power
+        document.write("<br>");
+        n = -10
+        document.write(Math.abs(n)); // returns absolut value
+        document.write("<br>");
+        document.write(Math.PI.toFixed(2)); // prints pi
+
+        document.write("<br>");
+
+        document.write(Math.random().toFixed(2)); // generates random number between 0 and 1
+        document.write("<br>");
+        n = Math.random();
+        n = Math.floor(n * 100) + 50; // multiply by 100, add a factor, round down to nearest integer 
+
+        document.write(n)
+
+
+    </script>
+</body>
+</html>

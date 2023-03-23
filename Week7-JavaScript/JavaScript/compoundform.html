@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator</title>
+</head>
+<body>
+    <h1>
+        Enter the numbers below and we will crunch them
+    </h1>
+    <img src="compound.jpg">
+    <script>
+        function compundinvestment()
+        {
+            var amount = document.form1.amount.value;
+            console.log(amount);
+            var interest = document.form1.interest.value;
+            console.log(interest);
+            var compound = document.form1.compound.value;
+            console.log(compound);
+            var years = document.form1.years.value;
+            console.log(years);
+            var results = amount * (1 + interest/compound) ** (compound * years);
+            console.log(results);
+            document.form1.result.value = results.toFixed(2);
+            
+            if (amount == "" || interest == "" || compound == "" || years == "")
+            {
+                alert("please enter numbers!!!");
+                return;
+            }
+
+            if (isNan(a))
+            {
+                alert("Please enter numbers!!!:");
+                return;
+            }
+        } 
+        function clearInput()
+        {
+            document.form1.reset();
+        }
+      
+        
+        
+    </script>
+
+<form name="form1">
+    <label for="amount" style="margin: 10px;">Enter your initial investment</label>
+    <input type="text" name="amount" style="margin: 10px;">
+    <br>
+    
+    <label for="interest" style="margin: 10px;">Enter your interest rate as a decimal(e.g for 5% type 0.05)</label>
+    <input type="text" name="interest" style="margin: 10px;">
+    <br>
+
+    <label for="compound" style="margin: 10px;">Enter the number of times interest is applied</label>
+    <input type="text" name="compound" style="margin: 10px;">
+    <br>
+
+    <label for="years" style="margin: 10px;">Enter the amount of years</label>
+    <input type="text" name="years" style="margin: 10px;">
+    <br>
+    <p>
+        Click the button to reveal your new total after investment</p>
+    <input type="button" value="Click me" onclick="compundinvestment();">
+    <br>
+
+    <label for="result" style="margin: 10px;">Your new balance after investing is</label>
+    <input type="text" name="result" style="margin: 10px;">
+
+
+    <p> Click the button to reset all fields</p>
+    <input type="button" onclick="clearInput();" value="Clear form">
+    <br>
+</form>
+
+
+</body>
+</html>

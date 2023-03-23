@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        GetTime example
+    </h1>
+    <script>
+
+        var d1 = new Date();
+
+        function interval1()
+        {
+            console.log(d1.getTime());
+        }
+        function interval2()
+        {
+            var d2 = new Date();
+            console.log(d2.getTime());
+        }
+
+        var i1 = setInterval(interval1, 3000);
+        var i2 = setInterval(interval2, 4000);
+
+
+
+    </script>
+    
+</body>
+</html>

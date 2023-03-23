@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>
+        Screen Saver Slideshow
+    </h1>
+    <hr>
+    
+    <input id="stopinterval" type="button" value="Stop">
+    
+    <input id="startinterval" type="button" value="Start">
+
+    <img id="myimg" style="height: 800px; width: 1500px;" src="city.jpg">
+    <script>
+    
+    var photos = ["city.jpg", "lake.jpg", "water.jpg", "tree.jpg", "forrest.jpg", "field.jpg", "northernLights.jpg", "tree2.jpg", "sunset.jpg", "stars.jpg"]
+    var i = 0;
+
+
+    document.getElementById("startinterval").addEventListener("click", startinterval);
+    
+    document.getElementById("stopinterval").addEventListener("click", stopinterval);
+    
+    function startinterval()
+    {
+        myInterval = setInterval(on_interval, 2000);
+    }
+    
+    
+    function stopinterval()
+    {
+        console.log("click");
+        clearInterval(myInterval);
+    }
+
+    function on_interval()
+    {
+        console.log("interval event");
+        document.getElementById("myimg").src = photos[i];
+        i++;
+        
+        if (i >= photos.length)
+        {
+            i = 0;
+        }
+    }
+    
+    var myInterval = setInterval(on_interval, 2000);
+
+
+
+    </script>
+
+
+
+</body>
+</html>

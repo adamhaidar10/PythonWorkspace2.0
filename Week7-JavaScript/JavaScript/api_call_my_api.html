@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function apicall()
+        {
+            let u = new URL("http://20.104.232.32:8000/contacts");
+
+            u.searchParams.append("name", 38.7223);
+            u.searchParams.append("lon", -9.1393);
+            let res = await fetch(u);
+            console.log(res);
+
+            let j = await res.json();
+            console.log(j);
+            
+        }
+        apicall();
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Promises
+    </h1>
+
+    <script>
+        let p = new Promise((resolve, reject) =>
+        {
+            let x = 4;
+            let y = 3;
+            let z = y * y;
+
+            if (x == z)
+            {
+                resolve("Yes");
+            }
+            else
+            {
+                reject("No");
+            }
+        });
+
+        p.then((res) =>
+        {
+            document.write(`Promise resolved ${res}`);
+        }).catch((res) => 
+        {
+            document.write(`Promise rejected ${res}`);
+        });
+
+    </script>
+
+</body>
+</html>

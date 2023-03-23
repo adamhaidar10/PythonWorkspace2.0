@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .on
+        {
+            background-color: pink;
+        }
+        .off
+        {
+            background-color: deeppink;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>
+        Interval example 1
+    </h1>
+    <hr>
+
+    <p id="mypara" style="width: 400px; height: 400px;" class="on">Hello world</p>
+    <img id="myimg">
+
+    <script>
+        function on_interval()
+        {
+            console.log("interval event");
+            document.getElementById("mypara").classList.toggle("off");
+
+            s = document.getElementById("myimg").src;
+            console.log(s);
+            if (s.slice(-9) == "happy.gif")
+            {
+                document.getElementById("myimg").src = "sad.gif";
+            }
+            else
+            {
+                document.getElementById("myimg").src = "happy.gif";
+            }
+        }
+
+        var myInterval = setInterval(on_interval, 5000);
+    </script>
+
+</body>
+</html>

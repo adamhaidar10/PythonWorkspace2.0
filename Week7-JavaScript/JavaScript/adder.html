@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The adding page</title>
+    <style>
+        .colourfultext{color: blueviolet}
+    </style>
+
+</head>
+<body>
+    <h1>
+        I am the magical adder
+    </h1>
+
+
+    <img src="snake.jpg" title="adder" alt="adder">
+
+
+    <p class="colourfultext">
+        Type in some numbers and I will magically add them together
+    </p>
+
+    <script>
+        function magicallyaddnumberstogther()
+        {
+            var x = document.form1.firstnumber.value;
+            var y = document.form1.secondnumber.value;
+            var z = Number(x) + Number(y);
+           document.form1.result.value = z;
+        }
+    </script>
+
+
+    <form name="form1">
+        <label for="firstnumber" style="margin: 10px;">Enter the first number</label>
+        <input type="text" name="firstnumber" style="margin: 10px;">
+        
+        <br>
+        
+        <label for="secondnumber" style="margin: 10px;">Enter the second number</label>
+        <input type="text" name="secondnumber" style="margin: 10px;"> 
+        
+        <p>
+            Click the button and the answer will be magically revealed</p>
+        <input type="button" value="Click me" onclick="magicallyaddnumberstogther();">
+        <br>
+
+        
+        <label for="result" style="margin: 10px;"> The answer is </label>
+        <input type="text" name="result" style="margin: 10px;">
+
+
+
+
+
+
+    </form>
+
+
+    
+</body>
+</html>
