@@ -1,0 +1,18 @@
+1 create a new file, decipher.c
+
+2 here are some pieces of ciphered text
+
+  adv adv mpcl nyhtz ibaaly
+  xwn xwn inax pajvb ljbcna bdpja
+  hkc gsjsb twjs ufoag dzowb tzcif
+  vhyhq ilyh judpv fkrfrodwh fklsv
+
+  write a script that deciphers them
+  they are all coded using Caesar shift cipher
+  but shifted by different amounts
+
+challenge 1 : write a piece of code that can take a string and move it along by one character each time until you get something that is readable
+
+challenge 2 : turn that piece of code into a function
+
+challenge 3 : create an array of the strings and loop around to decipher all of them
