@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-# get current date/time (ISO 8601 format)
+# get current date/time (In ISO 8601 format)
 d1 = datetime.now()
 print(d1)
 
