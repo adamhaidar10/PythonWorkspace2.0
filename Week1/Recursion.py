@@ -1,4 +1,6 @@
-from turtle import *
+from turtle import pencolor, left, right, width, forward, back, fillcolor
+from turtle import reset, speed, begin_fill, penup, goto, pendown
+from turtle import circle, end_fill, setheading, exitonclick
 import random
 
 
