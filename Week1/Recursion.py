@@ -1,20 +1,24 @@
 from turtle import *
 import random
 
+
 def f(n):
     if n > 0:
         print(f"The number is {n}")
-        f(n-1)
+        f(n - 1)
+
 
 f(100)
 
+
 def fact(n):
     if n > 1:
-        return n * fact(n-1)
+        return n * fact(n - 1)
     else:
         return n
 
-print (fact(15))
+
+print(fact(15))
 
 
 """def recursive_square(n):
@@ -84,6 +88,7 @@ def newtree(n):
         circle(random.randint(5, 15))
         end_fill()
         pencolor("brown")
+
 
 reset()
 speed(0)
